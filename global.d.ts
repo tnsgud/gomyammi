@@ -4,5 +4,6 @@ namespace NodeJS {
     CLIENT_ID: string;
     ENGIN_ID: string;
     API_KEY: string;
+    TTB_KEY: string;
   }
 }

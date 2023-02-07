@@ -1,6 +1,8 @@
+import axios from 'axios';
 import { ApplicationCommandOptionType } from 'discord.js';
 import qs from 'querystring';
-import { Command, Fire, QueryInput, Search } from '../../..';
+import { Command } from '../../../type';
+import { Search, QueryInput } from './type';
 
 const search: Search = async (options) => {
   const { enginId, apiKey, keyword } = options;
@@ -12,9 +14,10 @@ const search: Search = async (options) => {
     searchType: 'image',
   };
 
-  const response = await fetch(`${baseUrl}${qs.stringify(queryInput)}`);
+  console.log();
+  const res = await axios.get(`${baseUrl}${qs.stringify(queryInput)}`);
 
-  return response.json();
+  return res.data;
 };
 
 export const GoogleImageSearch: Command = {

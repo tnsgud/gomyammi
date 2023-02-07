@@ -1,9 +1,11 @@
-import { REST, Routes } from 'discord.js';
-import { Command } from '../..';
+import { REST } from '@discordjs/rest';
+import { Routes } from 'discord.js';
+import { Command } from '../../type';
 import { GoogleImageSearch } from './google_image_search';
+import { LightNovelSearch } from './light_novel_search';
 
 const rest = new REST({ version: '10' }).setToken(`${process.env.TOKEN}`);
-const commands: Command[] = [GoogleImageSearch];
+const commands: Command[] = [GoogleImageSearch, LightNovelSearch];
 
 export const addCommands = async () => {
   try {
